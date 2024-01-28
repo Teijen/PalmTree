@@ -8,7 +8,7 @@ import numpy as np
 import eval_utils as utils
 
 
-palmtree = utils.UsableTransformer(model_path="./palmtree/transformer.ep19", vocab_path="./palmtree/vocab")
+palmtree = utils.UsableTransformer(model_path="./pre-trained_model/palmtree/transformer.ep19", vocab_path="./pre-trained_model/palmtree/vocab")
 
 # tokens has to be seperated by spaces.
 
