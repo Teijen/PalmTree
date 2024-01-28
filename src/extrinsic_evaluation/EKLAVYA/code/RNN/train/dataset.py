@@ -3,7 +3,7 @@ import os
 import numpy as np
 import re
 from multiprocessing import Pool
-import instruction2vec
+#import instruction2vec
 import eval_utils as utils
 from collections import Counter
 

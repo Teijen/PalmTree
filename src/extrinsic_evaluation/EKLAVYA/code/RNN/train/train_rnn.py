@@ -7,9 +7,10 @@ import pickle
 
 import dataset
 import dataset_caller
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
+import tensorflow._api.v2.compat.v1 as tf
+#from tensorflow import keras
+from keras import layers
+import keras
 
 
 def lazy_property(function):
@@ -79,10 +80,10 @@ class Model(object):
     @lazy_property
     def probability(self):
         def lstm_cell():
-            if 'reuse' in inspect.getargspec(tf.contrib.rnn.GRUCell.__init__).args:
-                return tf.contrib.rnn.GRUCell(self.emb_dim, reuse=tf.get_variable_scope().reuse)
+            if 'reuse' in inspect.getargspec(tf.nn.rnn_cell.GRUCell.__init__).args:
+                return tf.nn.rnn_cell.GRUCell(self.emb_dim, reuse=tf.get_variable_scope().reuse)
             else:
-                return tf.contrib.rnn.GRUCell(self.emb_dim)
+                return tf.nn.rnn_cell.GRUCell(self.emb_dim)
 
         attn_cell = lstm_cell
         if self.dropout < 1:

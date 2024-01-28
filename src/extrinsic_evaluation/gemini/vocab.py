@@ -2,7 +2,8 @@
 This code has been taken and modified from https://github.com/ryankiros/skip-thoughts
 Constructing and loading dictionaries
 """
-import _pickle as pkl
+#import _pickle as pkl
+import pickle as pkl
 from collections import OrderedDict
 import argparse
 import re
@@ -43,7 +44,7 @@ def load_dictionary(loc):
     return worddict
 
 
-def save_dictionary(worddict, wordcount, loc'):
+def save_dictionary(worddict, wordcount, loc):
     """
     Save a dictionary to the specified location
     """
