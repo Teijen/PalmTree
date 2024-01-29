@@ -33,9 +33,10 @@ def main():
     splitFuncDict = {}
     train = []
     test = []
-    path_list = get_file_path('smalldata/pickles','pkl')
+    path_list = get_file_path('/home/logan/Dev/PalmTree/src/extrinsic_evaluation/EKLAVYA/smalldata/pickles','pkl')
     for file_path in path_list[0:10]:
-        temp=pickle.load(open(file_path))
+        tempFile = open(file_path,'rb')
+        temp=pickle.load(tempFile, encoding='latin1')
         for func_name in temp['functions']:
             (filepath,filename) = os.path.split(file_path)
             if random.random() >= 0.3:
@@ -44,7 +45,7 @@ def main():
                 test.append(filename + '#' + func_name)
     splitFuncDict['train'] = train
     splitFuncDict['test'] = test
-    with open('outputs/split_func.pkl', 'wb') as f:
+    with open('/home/logan/Dev/PalmTree/src/extrinsic_evaluation/EKLAVYA/outputs/split_func.pkl', 'wb') as f:
         pickle.dump(splitFuncDict, f)
 
 

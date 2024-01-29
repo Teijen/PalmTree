@@ -7,8 +7,9 @@ import sqlite3
 import sys
 import base64
 
-import tensorflow as tf
-from tensorflow.models.embedding import gen_word2vec
+#import tensorflow as tf
+import tensorflow._api.v2.compat.v1 as tf
+#from tensorflow.models.embedding import gen_word2vec
 
 
 embeddings = {}

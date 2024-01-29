@@ -402,7 +402,7 @@ def get_config():
         'max_to_save': args.max_to_save,
         'batch_size': args.batch_size,
         'summary_frequency': args.summary_frequency,
-        'embedding_type': args.embedding_type
+        'embedding_type': 'trans' #args.embedding_type
     }
 
     return config_info

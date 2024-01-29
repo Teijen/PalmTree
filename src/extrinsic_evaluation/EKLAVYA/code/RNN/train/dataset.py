@@ -142,8 +142,8 @@ class Dataset(object):
         self.class_num = class_num
         self.embd_type = embd_type
         print(func_path)
-        with open(func_path) as f:
-            func_info = pickle.load(f)
+        with open(func_path,'rb') as f:
+            func_info = pickle.load(f, encoding='latin1')
         self.train_func_list = np.asarray(func_info['train'])
         self.train_num = len(self.train_func_list)
         print('Loaded train function information ... %s' % func_path)
